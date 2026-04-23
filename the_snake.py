@@ -40,9 +40,31 @@ clock = pygame.time.Clock()
 
 
 # Тут опишите все классы игры.
-...
+class GameObject:
+    """
+    Конструктор базового игрового объекта.
+    Аргументы: position (координаты), body_color (цвет).
+    """
 
+    def __init__(self, position=None, body_color=None):
+        """
+        Конструктор базового игрового объекта.
+        Аргументы: position (координаты), body_color (цвет).
+        """
+        if position is None:
+            self.position = (320, 240)
+        else:
+            self.position = position
 
+    def draw(self, surface):
+        """
+        
+        
+        """
+        pass
+
+class Apple(GameObject):
+    
 def main():
     # Инициализация PyGame:
     pygame.init()
