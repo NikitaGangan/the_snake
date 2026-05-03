@@ -29,18 +29,22 @@ SNAKE_COLOR = (0, 255, 0)
 # Скорость движения змейки:
 SPEED = 20
 
-# Настройка игрового окна:
+# Инициализация Pygame и глобальные объекты
 screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT), 0, 32)
-
-# Заголовок окна игрового поля:
 pygame.display.set_caption('Змейка')
-
-# Настройка времени:
 clock = pygame.time.Clock()
 
 
 # Тут опишите все классы игры.
-...
+class GameObject:
+
+    def __init__(self, position, body_color):
+        self.position = position
+        self.body_color = body_color
+
+    def draw():
+        pass
+
 
 
 def main():
