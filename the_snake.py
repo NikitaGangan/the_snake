@@ -46,6 +46,24 @@ class GameObject:
         pass
 
 
+class Apple(GameObject):
+    def __init__(self, APPLE_COLOR):
+        self.randomize_position()
+        self.apple_color = APPLE_COLOR
+
+    def randomize_position():
+        while True:
+            x = randint(0, GRID_WIDTH - 1) * GRID_SIZE
+            y = randint(0, GRID_HEIGHT - 1) * GRID_SIZE
+            new_pos = (x, y)
+            if snake_positions is None or new_pos not in snake_positions:
+                self.position = new_pos
+                break
+
+    def draw(self):
+        rect = pygame.Rect(self.position, (GRID_SIZE, GRID_SIZE))
+        pygame.draw.rect(screen, self.body_color, rect)
+        pygame.draw.rect(screen, BORDER_COLOR, rect, 1)
 
 def main():
     # Инициализация PyGame:
@@ -62,14 +80,6 @@ def main():
 
 if __name__ == '__main__':
     main()
-
-
-# Метод draw класса Apple
-# def draw(self):
-#     rect = pygame.Rect(self.position, (GRID_SIZE, GRID_SIZE))
-#     pygame.draw.rect(screen, self.body_color, rect)
-#     pygame.draw.rect(screen, BORDER_COLOR, rect, 1)
-
 # # Метод draw класса Snake
 # def draw(self):
 #     for position in self.positions[:-1]:
