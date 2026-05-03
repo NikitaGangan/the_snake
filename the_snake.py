@@ -99,7 +99,7 @@ class Snake(GameObject):
         if self.next_direction:
             self.direction = self.next_direction
             self.next_direction = None
- 
+
     def get_head_position(self):
         """Возвращает позицию головы змейки."""
         return self.positions[0]
@@ -111,10 +111,10 @@ class Snake(GameObject):
 
         new_head = ((head[0] + (x * GRID_SIZE)) % SCREEN_WIDTH,
                     (head[1] + (y * GRID_SIZE)) % SCREEN_HEIGHT)
-        
+
         self.positions.insert(0, new_head)
 
-        if len(self.positions)>self.length:
+        if len(self.positions) > self.length:
             self.last = self.positions.pop()
         else:
             self.last = None
@@ -152,6 +152,7 @@ def handle_keys(snake):
                 snake.next_direction = LEFT
             elif event.key == pygame.K_RIGHT and snake.direction != LEFT:
                 snake.next_direction = RIGHT
+
 
 def main():
     """Основной игровой цикл."""
